@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/default_css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+   <!-- <link href="/static/css/signin.css" rel="stylesheet">-->
+
+    <link href="static/css/login.css" rel="stylesheet">
+
+   <script src="static/js/jquery-1.9.0.js"></script>
+  <!--<script src="static/js/script2.js"></script>-->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+	<script src="https://cdn.awesomefunctions.com/awesome-functions.min.js"></script> 
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+   <style>
+   
+   .btn {
+  float:left;
+	color: moccasin;
+	border: 1px solid black;
+	width: 27%;
+  
+	font-family: sans-serif;
+	font-size: 18px;
+	transition: 0.9s ease;
+	text-align: center;
+}
+
+.btn:hover {
+	background-color: #F07334;
+	color: black;
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 12px;
+
+}
+   
+label {
+  float:left; 
+  color:moccasin;
+
+}
+.form-control {
+	background-color:moccasin;
+	border: none;
+	
+	text-align: left;
+	color: royalblue;
+  font-size:16px;
+}
+
+h2 {
+	font-family: sans-serif;
+	color: moccasin;
+}
+   
+
+
+#backid {
+    float:right;
+    color:moccasin;
+    border: 1px solid black;
+	  width: 70px;
+    margin-top:-3px;
+	font-family: sans-serif;
+	font-size: 18px;
+	transition: 0.5s ease;
+	text-align: center;
+}
+#backid:hover {
+	background-color: #F07334;
+	color: black;
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 15px;
+
+}
+
+#back {
+    color:moccasin;
+}  
+#back:hover {
+	color: black;
+}
+ 
+
+   
+   
+   
+   </style>
+   
+  </head>
+
+  <body>
+
+    <div class="container" style="width:450px; margin-left:33%; margin-top:1%;">
+
+      <form class="form-signin"  role="form">
+        <h2 >Please Sign Up</h2>
+      
+         
+        <div class="form-group">
+        <label>Name :</label>
+        <input type="text" id="txtName" name="name" class="form-control" placeholder="Enter your name" required autofocus>
+        </div>
+
+
+
+        <div class="form-group">
+        <label >Email :</label>
+        <input type="email" id="txtUsername" name="username" class="form-control" placeholder="Email address" required autofocus>
+        </div>
+
+         
+        <div class="form-group">
+        <label>Country :</label>
+        <input type="text" id="txtCountry" name="country" class="form-control" placeholder="Country.." required autofocus>
+        </div>
+
+       
+        <div class="form-group">
+        <label >City :</label>
+        <input type="text" id="txtCity" name="city" class="form-control" placeholder="City.." required autofocus>
+        </div>
+
+      
+        <div class="form-group">
+        <label >School Name :</label>
+        <input type="text" id="txtSchool" name="school" class="form-control" placeholder="School name" required autofocus>
+        </div>
+
+
+      <div class="form-group">
+        <label >Password :</label>
+        <input type="password" id="txtPassword" name="password" class="form-control" placeholder="Password" required>
+      </div>
+
+        <div class="form-group">
+        <label>Password Confirmation :</label>
+        <input type="password" id="txtPasswordConf" name="passwordconf" class="form-control" placeholder="Password" required>
+      </div>
+
+
+        <button id="sender" class="btn btn-md btn-primary btn-block" type="button" value = 'send'>Register</button>
+
+        <button id="backid" class="btn btn-md btn-success btn-block" type="button" value = 'send' >Back</button>
+      
+      </form>
+      
+      
+
+ 	
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+  <script>
+  
+  $(function(){
+
+  $('#backid').click(function(){
+ 
+  window.location.href = "http://127.0.0.1:5000/";
+  });
+  
+
+	$('#sender').click(function(){
+
+    let name1  = document.getElementById("txtName").value;
+    let username1 = document.getElementById("txtUsername").value;
+    let country1 = document.getElementById("txtCountry").value;
+    let city1 = document.getElementById("txtCity").value;
+    let school1 = document.getElementById("txtSchool").value;
+    let password1 = document.getElementById("txtPassword").value;
+    let passwordconf1 = document.getElementById("txtPasswordConf").value;
+  
+    var txtUsername = d3.select('#txtUsername');
+    var check = "";
+    if(name1 == "" ){
+      //Show alert
+      window.alert("Please Enter your name")
+     }else if(username1 == ""){
+      //Show alert
+      window.alert("Please Enter your email")
+      
+
+     }else if(username1 != ""){
+      
+           for(var i=0 ; i < username1.length ; i++) 
+        {
+          //charAt(i) can also be used to get a letter of a string 
+              if(username1[i] == "@")
+                 {
+                     check = username1[i];
+                 }
+
+        }
+    if(check.length == 0)
+    {
+         window.alert("Please Enter a valid email")
+         document.getElementById("txtUsername").style.color = "red";
+         //handle when mouse is down in input box
+         txtUsername.on('mousedown', function() {
+         document.getElementById("txtUsername").style.color = "royalblue";
+         });
+      
+     }else if(country1 == ""){
+      //Show alert
+      window.alert("Please Enter your country")
+      
+
+     }else if(city1 == ""){
+      //Show alert
+      window.alert("Please Enter your city")
+      
+
+     }else if(school1 == ""){
+      //Show alert
+      window.alert("Please Enter your school")
+      
+
+     }else if(password1 == ""){
+      //Show alert
+      window.alert("Please Enter your password")
+      
+
+     }else if(passwordconf1 == ""){
+      //Show alert 
+      window.alert("Please Enter your password confirmation")
+  
+
+     }else if(password1 != passwordconf1){
+       
+      var txtPassword = d3.select('#txtPassword');
+      var txtPasswordConf = d3.select('#txtPasswordConf');
+      //Show alert 
+      window.alert("Your passwords doesn't match")
+       document.getElementById("txtPassword").style.color = "red";
+       document.getElementById("txtPasswordConf").style.color = "red";
+        
+         txtPassword.on('mousedown', function() {
+         document.getElementById("txtPassword").style.color = "royalblue";
+             });
+         
+          txtPasswordConf.on('mousedown', function() {
+         document.getElementById("txtPasswordConf").style.color = "royalblue";
+             });
+         }else{ 
+       
+    var name = $('#txtName').val();
+		var username = $('#txtUsername').val();
+		var country = $('#txtCountry').val();
+		var city = $('#txtCity').val();
+		var school = $('#txtSchool').val();
+		var password = $('#txtPassword').val();
+		var passwordconf = $('#txtPasswordConf').val();
+    
+
+		   $.ajax({
+		   	url: '/signUpUser',
+		  	data: $('form').serialize(),
+			  type: 'POST',
+		  	success: function(response){
+			  	console.log(response);
+   document.getElementById("txtName").value = "";
+   document.getElementById("txtUsername").value ="";
+   document.getElementById("txtCountry").value="";
+   document.getElementById("txtCity").value = "";
+   document.getElementById("txtSchool").value = "";
+   document.getElementById("txtPassword").value = "";
+   document.getElementById("txtPasswordConf").value = "";
+		      	},
+		     	error: function(error){
+			    	console.log(error);
+		       }
+		     });
+      } 
+   }  
+  
+  });
+});
+
+  </script>
+
+
+
+</html>
+

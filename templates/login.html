@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/default_css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+   <!-- <link href="/static/css/signin.css" rel="stylesheet">-->
+
+    <link href="static/css/login.css" rel="stylesheet">
+
+   <script src="static/js/jquery-1.9.0.js"></script>
+  <!--<script src="static/js/script2.js"></script>-->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+	<script src="https://cdn.awesomefunctions.com/awesome-functions.min.js"></script> 
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+   <style>
+   
+#loginid {
+    float:left;
+	color: moccasin;
+	border: 1px solid black;
+	width: 25%;
+	font-family: sans-serif;
+	font-size: 18px;
+	transition: 0.9s ease;
+	text-align: center;
+}
+
+#loginid:hover {
+	background-color: #F07334;
+	color: black;
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 12px;
+
+}
+
+#signupid {
+    float:right;
+    color:moccasin;
+    border: 1px solid black;
+	width: 110px;
+    margin-top:10px;
+    margin-bottom:25px;
+    margin-left:100px;
+	font-family: sans-serif;
+	font-size: 18px;
+	transition: 0.5s ease;
+	text-align: center;
+}
+#signupid:hover {
+	background-color: #F07334;
+	color: black;
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 12px;
+
+}
+   
+label {
+  float:left; 
+  color:moccasin;
+
+}
+.form-control {
+	background-color:moccasin;
+	border: none;
+	
+	text-align: left;
+	color: royalblue;
+  font-size:16px;
+}
+
+h2 {
+	font-family: sans-serif;
+	color: moccasin;
+}
+#passwordforget {
+    float:right;
+    color: moccasin;
+}
+
+   
+   
+   
+   
+   </style>
+   
+  </head>
+
+  <body>
+
+    <div class="container" style="width:450px; margin-left:33%; margin-top:1%;">
+
+      <form class="form-signin"  role="form">
+        <h2 >Welcome To BleachLapp</h2>
+      
+    <div class="form-group">
+      <button id="signupid" class="btn btn-md btn-success btn-block" type="button" value = 'send' >signUp</button>
+      
+    </div>  
+
+        <div class="form-group">
+        <label >identifiant :</label>
+        <input type="email" id="txtUsername" name="username" class="form-control" placeholder="Email address" required autofocus>
+        </div>
+
+
+      <div class="form-group">
+        <label >Password :</label>
+        <input type="password" id="txtPassword" name="password" class="form-control" placeholder="Password" required>
+      </div>
+
+
+     <button id="loginid" class="btn btn-md btn-primary btn-block" type="button" value = 'send' >login</button>
+
+      </form>
+
+    <a id="passwordforget" href="forgotpassword">forgot password?..</a>
+
+
+ 	
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+  <script>
+  $(function(){
+
+  $('#signupid').click(function(){
+  window.location.href = "http://127.0.0.1:5000/signUp";
+  });
+      
+    $.ajax({
+	      url: '/',
+	      data: $('form').serialize(),
+		    type: 'POST',
+		  success: function(response){
+            response = JSON.parse(response)
+            //var response1 = response.split(',');
+            console.log(response);
+
+            var emailArray = [];
+            var passwordArray = [];
+            
+            for(i=0;i<response.email.length;i++){
+                    emailArray[i]=response.email[i];
+            } 
+              for(i=0;i<response.password.length;i++){
+                    passwordArray[i]=response.password[i];
+            }                                                      //emailArray = response.email;
+            //passwordArray = response.password;
+            console.log(emailArray);
+            console.log(passwordArray);
+              
+           
+             
+
+
+     
+	$('#loginid').click(function(){
+    
+    let username1 = document.getElementById("txtUsername").value;
+    
+    let password1 = document.getElementById("txtPassword").value;
+    
+  
+    var txtUsername = d3.select('#txtUsername');
+    var check = "";
+    var check1 = "";
+
+     if(username1 == ""){
+      //Show alert
+      window.alert("Please Enter your email")
+      
+
+     }else if(username1 != ""){
+           
+
+   for(var i=0 ; i < emailArray.length; i++)
+    {
+        if(emailArray[i] == username1)
+          {
+            check = emailArray[i];
+            console.log(check);
+          }
+    }
+      
+       
+    if(check.length == 0)
+    {
+         window.alert("Please Enter a valid email")
+         document.getElementById("txtUsername").style.color = "red";
+         //handle when mouse is down in input box
+         txtUsername.on('mousedown', function() {
+         document.getElementById("txtUsername").style.color = "royalblue";
+         });
+      
+     }else if(password1 == ""){
+      //Show alert
+      window.alert("Please Enter your password")
+      
+
+     }else if(password1 != ""){
+           
+
+   for(var i=0 ; i < passwordArray.length; i++)
+    {
+        if(passwordArray[i] == password1)
+          { 
+            check1 = passwordArray[i];
+            console.log(check1);
+          }
+    }
+      
+       
+    if(check1.length == 0)
+    {
+         window.alert("Please Enter a valid Password")
+         document.getElementById("txtPassword").style.color = "red";
+         //handle when mouse is down in input box
+         txtPassword.on('mousedown', function() {
+         document.getElementById("txtPassword").style.color = "royalblue";
+         });
+      
+     }else{ 
+       
+		var username = $('#txtUsername').val();
+		var password = $('#txtPassword').val();
+    
+		   $.ajax({
+		   	url: '/home',
+		  	data: $('form').serialize(),
+			  type: 'POST',
+            
+	       success: function(response){
+      
+	 console.log(response);
+     document.getElementById("txtUsername").value ="";
+     document.getElementById("txtPassword").value = "";
+     window.location.href = "http://127.0.0.1:5000/Gxmove";
+    	},
+		     	error: function(error){
+			    	console.log(error);
+		       }
+		     });
+           } 
+          }
+        }  
+     });
+//closing  response
+        },
+			error: function(error){
+		   	console.log(error);
+		   }
+	 });
+ //closing function    
+
+});
+
+
+  </script>
+
+</html>

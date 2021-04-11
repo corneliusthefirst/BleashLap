@@ -1,0 +1,26 @@
+*{
+	text-align: center;
+	padding: 5px;
+}
+
+
+.container {
+	font-family:  sans-serif;
+	border: 2px solid #F07334;
+	text-align:  center;
+    margin-top:13%;
+    margin-left:25%;
+	border-radius: 12px;
+	background-color: #fff url(../images/4.jpg) repeat top center;;
+	padding-bottom: 10px;
+	-webkit-box-shadow: 3px 0px 10px 0px black;
+	-moz-box-shadow: 3px 0px 10px 0px black;
+	box-shadow: 3px 0px 10px 0px black;
+
+}
+
+body {
+    background: #fff url(../images/4.jpg) repeat top center;
+	
+}
+

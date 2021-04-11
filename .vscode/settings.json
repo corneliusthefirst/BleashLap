@@ -1,0 +1,4 @@
+{
+    "mocha.enabled": false,
+    "python.linting.pylintEnabled": true
+}

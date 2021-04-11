@@ -1,0 +1,906 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/default_css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+   <!-- <link href="/static/css/signin.css" rel="stylesheet">-->
+
+    <!--<link href="static/css/login.css" rel="stylesheet">-->
+
+   <script src="static/js/jquery-1.9.0.js"></script>
+  <!--<script src="static/js/script2.js"></script>-->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+	<script src="https://cdn.awesomefunctions.com/awesome-functions.min.js"></script> 
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	
+
+   <style>
+   
+   .btn {
+	color: moccasin;
+    
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 18px;
+	transition: 0.9s ease;
+	text-align: center;
+}
+
+.btn:hover {
+	background-color: #F07334;
+	color: black;
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 12px;
+
+}
+   
+label {
+  float:left; 
+  color:black;
+
+}
+.form-control {
+	background-color:moccasin;
+	border: none;
+	
+	text-align: left;
+	color: royalblue;
+  font-size:16px;
+}
+
+h1 {
+	font-family: sans-serif;
+	color: orangered;
+}
+#h11 {
+   margin-left:3%;
+}
+ 
+h2 {
+	font-family: sans-serif;
+	color: royalblue;
+}  
+ 
+.container {
+	font-family:  sans-serif;
+	border: 2px solid #F07334;
+	text-align:  center;
+  margin-top:2%;
+  height:90%;
+  
+	border-radius: 12px;
+	background-color: moccasin;
+	padding-bottom: 10px;
+	-webkit-box-shadow: 3px 0px 10px 0px black;
+	-moz-box-shadow: 3px 0px 10px 0px black;
+	box-shadow: 3px 0px 10px 0px black;
+
+}
+
+body {
+    background: #fff url(../static/images/4.jpg) repeat top center;
+	
+} 
+
+.modal-body {
+    background: #fff url(../static/images/4.jpg) repeat top center;
+	
+} 
+
+
+#createid {
+    float:right;
+    color:moccasin;
+    border: 1px solid black;
+	width: 100px;
+    padding-top:7px;
+    padding-bottom:4px;
+    margin-right:35px;
+    
+    margin-top:7px;
+    
+	font-family: sans-serif;
+	font-size: 18px;
+	transition: 0.5s ease;
+	text-align: center;
+}
+#createid:hover {
+	background-color: #F07334;
+	color: black;
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 12px;
+
+}
+   
+
+
+#backid {
+    float:right;
+    color:moccasin;
+    border: 1px solid black;
+	width: 70px;
+    margin-top:7px;
+    
+    
+	font-family: sans-serif;
+	font-size: 16px;
+	transition: 0.5s ease;
+	text-align: center;
+}
+#backid:hover {
+	background-color: #F07334;
+	color: black;
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 15px;
+
+}
+
+#appt {
+	width:145px;
+	margin-left:-55%;
+	background-color:#ffa;
+    margin-top:-1%;
+	
+}
+
+#subjectid {
+   background-color:#fff;
+   margin-left:-58%;
+}
+
+
+#submitsubject {
+	color:black;
+	width:60px;
+	margin-left:45%;
+	margin-top:-4%;
+	font-size:11px;
+}
+
+
+   </style>
+   
+  </head>
+
+  <body>
+  <h1 id="h11">Bleach Learning App</h1>
+  <div class="container" style="margin-bottom:0px;">
+
+   <h2>Welcome To BleachLapp</h2>
+   <br>
+<div>
+<form class="form-check"  role="form">
+
+
+<ul class="form-inline">
+<label>At What time do you come back from school : </label>
+<input type="time" id="appt" name="time" class="form-control" require autofocus>
+</ul>
+
+<ul class="form-inline">
+<label>Niveau d'etude : </label>
+
+<!--<div class="dropdown">
+<button class="btn btn-primary dropdown-toggle "   type="button" data-toggle="dropdown" id="dropdown1">School level <span class="caret"></span></button>
+<ul class="dropdown-menu " id="drop" onchange="myFunction()">
+<li><a href="#" value="primary">Primary school</a></li>
+<li class="divider" ></li>
+<li><a href="#" value="secondary" >Secondary school</a></li>
+<li class="divider" ></li>
+<li><a href="#" value="university">University</a></li>
+</ul>
+</div>-->
+<select id="mySelect" class="btn btn-primary btn-md"style="width:160px; margin-left:-70%; margin-top:-1%;" onchange="myFunction()">
+  <option value="Primary School">Primary School
+  <option value="Secondary School">Secondary School
+  <option value="University">University
+</select>
+<br>
+<br>
+<label>Give us your subjects : </label>
+</ul>
+
+<br>
+<ul class="form-inline">
+<label> subject / difficulty level : </label>
+<input type="text" id="subjectid" name="subject"  require autofocus>
+
+<select id="mySelect1" class="btn btn-primary btn-md" style="margin-left:2%;" onchange="myFunction1()" value="Difficulty level">
+
+  <option value="1">1
+  <option value="">2
+  <option value="3">3
+  <option value="4">4
+  <option value="5">5
+  <option value="6">6
+  <option value="7">7
+  <option value="8">8
+  <option value="9">9
+  <option value="10">10
+</select>
+
+</ul>
+<button id="submitsubject" class="btn btn-md btn-success btn-block" type="button" value = 'send' >Submit</button>
+<br>
+</ul>
+<br>
+
+
+
+<ul class="form-inline">
+<label>Enter your School timeTable : </label>
+<br>
+</ul>
+<!--  <input type="radio" class="form-check-input" id="timetable-no" name="timetableabsent">
+  <label id="nottlabel">I don't have a timetable </label>
+  <br>
+  <input type="radio" class="form-check-input" id="timetable-yes" name="timetableabsent">
+  <label id="nottlabel">I have a timetable </label>
+
+</ul>-->
+
+  <!-- My table-->
+
+ <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="width:140px;margin-left:-57%;">My Timetable</button>
+<br>
+  <!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog" style="margin-top:-15px;">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:moccasin;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">My Timetable</h4>
+        </div>
+<div class="modal-body">
+
+
+
+	 <div style="width:300px; padding-bottom:490px;" >
+        
+
+		<div class="panel panel-success right-block" style="width:250px;  float:left; " class="col-md-4">
+			  
+				  <div class="panel-heading text-center" style="background-color:peru; color:black; font-size:14px; border-radius:8px;   border: 18px solid #F07334;" >Add a subject per day To fill the Table</div>
+		
+				  <!--[New Task Body - Start]-->
+			<div class="panel-body" style="background-color:peru; border-radius:2px;     border: 2px solid #F07334;"> 
+             
+            <div class="input-group">
+			<span class="input-group-addon">Line.No</span>
+            <input type="text" name="number" id="txtNumber" class="form-control">
+            </div>
+            <br/>
+
+            <div class="input-group">
+			<span class="input-group-addon">Monday</span>
+            <input type="text" name="monday" id="txtMonday" class="form-control">
+            </div>
+            <br/>
+         
+            <div class="input-group">
+			<span class="input-group-addon">Tuesday</span>
+            <input type="text" name="tuesday" id="txtTuesday" class="form-control">
+            </div>
+            <br/>
+
+
+             <div class="input-group">
+			<span class="input-group-addon">Wednesday</span>
+            <input type="text" name="wednesday" id="txtWednesday" class="form-control">
+            </div>
+            <br/>
+
+             <div class="input-group">
+			<span class="input-group-addon">Thursday</span>
+            <input type="text" name="thursday" id="txtThursday" class="form-control">
+            </div>
+            <br/>
+
+            <div class="input-group">
+			<span class="input-group-addon">friday</span>
+            <input type="text" name="friday" id="txtFriday" class="form-control">
+            </div>
+        
+
+           <div class="form-inline">
+            <button type="button" name="update" id="updateid" class="btn btn-success" value="send" style="float:left; width:80px; margin-top:20px;">Update</button>
+          
+            <button type="button" name="insert" class="btn btn-primary" id="insertid" value="send" style="float:right; width:80px; margin-top:20px;">Insert</button>
+            </div>
+        </div>
+        
+    </div>
+      
+ 
+
+    
+
+<div class="col-md-7" style=" margin-left:250px; margin-top:-470px; ">
+   
+   <div class="form-inline" style="margin-top:-50px; margin-bottom:10px;">
+   <button class="btn btn-success btn-xs" type="button" id="editid" style="width:65px; float:left; margin-top:7px;" value="send">
+            <span class="glyphicon glyphicon-edit"></span> Edit
+   </button>
+
+   <input type="text" name="rowedit" id="txtRowEdit" class="form-control"style="width:60px; margin-top:7px;" placeholder="Line.No">
+</div>
+
+
+   <div class="form-inline" style="margin-left:180px; margin-top:-50px; margin-bottom:10px;">
+   
+   <button class="btn btn-danger btn-xs" type="button" id="deleteid" style="width:86px; margin-top:8px;" value="send">
+        <span class="glyphicon glyphicon-trash" ></span> Delete
+   </button>
+    <input type="text" name="rowdelete" id="txtRowDelete" class="form-control" style="width:60px; margin-top:-50px; margin-left:100px;" placeholder="Line.No">
+   </div>
+      
+
+
+<table class="table table-bordered table-hover" id="tbl" style="background-color:palegreen;">
+<thead style="background-color:moccasin;" >
+    <th>Line.No</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thurday</th>
+    <th>Friday</th>
+</thead>
+ <tbody id="tblbody" > 
+ </tbody>
+
+</table>
+</div>
+
+
+
+
+      </div>
+
+  </div>
+
+ </div>
+        <div class="modal-footer" style="background-color:moccasin;">
+          <button type="button" class="btn btn-success" data-dismiss="modal" style="width:90px; margin-top:-5px;">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+</form>
+
+
+
+
+<button id="backid" class="btn btn-md btn-success btn-block" type="button" value = 'send' >Back</button>
+
+<button id="createid" class="btn btn-md btn-primary btn-block" type="button" value = 'send'>Create</button>
+
+<!--<select id="mySelect" onchange="myFunction()">
+  <option value="Audi">Audi
+  <li class="divider"></li>
+  <option value="BMW">BMW
+  <option value="Mercedes">Mercedes
+  <option value="Volvo">Volvo
+</select>
+<p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+
+<p id="demo"></p>-->
+
+
+</div>
+
+
+
+
+ </div>
+ <script>
+
+  function myFunction() {
+    var x = document.getElementById("mySelect").value;
+    console.log(x);
+
+}
+ function myFunction1() {
+    var y = document.getElementById("mySelect1").value;
+    console.log(y);
+
+}
+ 
+$(function(){
+
+  var date1;
+  var schoolevel1 ;
+  var diff;
+  var sub;
+  var subjectArray =[];
+  var difficultyArray=[];
+
+//school level
+ /* $('#drop').click(function() { 
+       schoolevel1 = document.getElementById('#dropdown1').value;
+       console.log(schoolevel);
+
+       //date
+       date1 = document.getElementById('#appt').value;
+       console.log(date1);
+       
+
+   }); */
+  
+    
+  /*  
+//subject an difficulty level
+   $('#submitsubject').click(function() { 
+    
+    $('#dropdown2').click(function() { 
+       diff = document.getElementById('#drop1').value;
+       difficultyArray.push(diff);
+       console.log(difficultyArray);
+   });
+
+     sub = document.getElementById('#subjectid').value;
+     subjectArray.push(sub);
+     document.getElementById('#subjectid').value="";
+     conole.log(subjectArray);
+
+   });
+
+
+//checkboxes
+/*$('#myform :checkbox').change(function() {
+    // this will contain a reference to the checkbox   
+    if (this.checked) {
+        // the checkbox is now checked 
+    } else {
+        // the checkbox is now no longer checked
+    }
+*/
+/*
+$('#createid').click(function(){
+    var complementarydata = {
+        'date':date1,
+        'schoollevel':schoollevel1,
+        'subjectinfo':{'subject':subjectArray,'difficulty':difficultyArray},
+    
+    }
+
+   console.log(complementarydata);
+  });
+ 
+*/
+
+
+
+
+
+
+     
+    $.ajax({
+	      url: '/tablecreation',
+	     // data: $('form').serialize(),
+		  type: 'POST',
+		  success: function(response){
+            response = JSON.parse(response)
+
+            console.log(response);
+
+ function showtable(tblArray) {
+
+             idArray = []
+             mondayArray = []
+             tuesdayArray = []
+             wednesdayArray = []
+             thursdayArray = []
+             fridayArray = []
+            
+            for(i=0;i<response.id.length;i++){
+                    idArray[i]=response.id[i];
+            } 
+              for(i=0;i<response.monday.length;i++){
+                    mondayArray[i]=response.monday[i];
+            }   
+            for(i=0;i<response.tuesday.length;i++){
+                    tuesdayArray[i]=response.tuesday[i];
+            } 
+              for(i=0;i<response.wednesday.length;i++){
+                    wednesdayArray[i]=response.wednesday[i];
+            }   
+            for(i=0;i<response.thursday.length;i++){
+                    thursdayArray[i]=response.thursday[i];
+            } 
+              for(i=0;i<response.friday.length;i++){
+                    fridayArray[i]=response.friday[i];
+            }   
+                                                          
+            console.log(idArray);
+            console.log(mondayArray);
+            console.log(tuesdayArray);
+            console.log(wednesdayArray);
+            console.log(thursdayArray);
+            console.log(fridayArray);
+ 
+
+
+    var max = Math.max(idArray.length,mondayArray.length,tuesdayArray.length,wednesdayArray.length,thursdayArray.length,fridayArray.length);
+    //Get html table 0 means first table
+var table =  document.getElementsByTagName('tbody')[0];
+   
+   for(i=1; i <= max ; i++){
+    //add a new empty row to the table
+    var newRow  = table.insertRow(i-1);
+    
+    //add new cells to the table
+    var cel1 = newRow.insertCell(0);
+    var cel2 = newRow.insertCell(1);
+    var cel3 = newRow.insertCell(2);
+    var cel4 = newRow.insertCell(3);
+    var cel5 = newRow.insertCell(4);
+    var cel6 = newRow.insertCell(5);
+
+    //filling the cells
+    cel1.innerHTML = idArray[i-1];
+    cel2.innerHTML = mondayArray[i-1];
+    cel3.innerHTML = tuesdayArray[i-1];
+    cel4.innerHTML = wednesdayArray[i-1];
+    cel5.innerHTML = thursdayArray[i-1];
+    cel6.innerHTML = fridayArray[i-1];
+
+
+   }
+   return max;
+
+}
+
+max = showtable(response);
+console.log(max);
+   /*
+ table.selectRow(9);
+ var selectedData = table.getSelectedData(); //get array of currently selected data.
+ console.log(selectedData);*/
+/*
+ var rows = table.updateRow();
+ console.log(rows)*/
+
+$('#editid').click(function(){
+    var edId = document.getElementById('txtRowEdit').value;
+    console.log(edId);
+    console.log(max);
+    console.log(response);
+
+   /*  for(i=0;i<response.id.length;i++)
+     {
+                    idArray[i]=response.id[i];
+     } */
+     //map and grep
+	/*	var data = $.map( response, function( val, i) 
+		{		
+			if(val.id == edId)
+			{ 
+				return val;
+			}
+		});
+        console.log(data);*/
+        var tbledit = []
+        var data = {}
+        for(let i=0;i < max;i++)
+     {
+        data = {'id':response.id[i],'monday':response.monday[i],'tuesday':response.tuesday[i],'wednesday':response.wednesday[i],'thursday':response.thursday[i],'friday':response.friday[i]};
+         //console.log(data);
+         tbledit.push(data);
+     } 
+         console.log(tbledit);
+        // console.log(tbledit[0].id);
+
+        for(let i=0;i<max;i++)
+        {
+            if(tbledit[i].id == edId )
+            {
+             document.getElementById('txtNumber').value = tbledit[i].id; 
+             document.getElementById('txtMonday').value = tbledit[i].monday;
+             document.getElementById('txtTuesday').value = tbledit[i].tuesday;
+             document.getElementById('txtWednesday').value = tbledit[i].wednesday;
+             document.getElementById('txtThursday').value = tbledit[i].thursday;
+             document.getElementById('txtFriday').value  = tbledit[i].friday;
+             document.getElementById("txtNumber").disabled = true;
+            }
+        }
+
+
+
+$('#updateid').click(function(){
+    
+    let number1  = document.getElementById('txtNumber').value;
+    let monday1  = document.getElementById('txtMonday').value;
+    let tuesday1 = document.getElementById('txtTuesday').value;
+    let wednesday1 = document.getElementById('txtWednesday').value;
+    let thursday1 = document.getElementById('txtThursday').value;
+    let friday1 = document.getElementById('txtFriday').value;
+
+    for(let i=0;i<max;i++)
+        {
+            if(tbledit[i].id == number1 )
+            {
+                  //Get html table 0 means first table
+           var table =  document.getElementsByTagName('table')[0];
+           console.log(max);
+                
+              tbledit[i].id = number1;
+              tbledit[i].monday = monday1;
+              tbledit[i].tuesday = tuesday1;
+              tbledit[i].wednesday = wednesday1;
+              tbledit[i].thursday = thursday1;
+              tbledit[i].friday = friday1;
+              console.log(tbledit[i]);
+              var updateddata = tbledit[i];
+            }
+
+        }    
+
+        //creating back a reponse type object so as to call my show function
+        idArr = [];monArr = [];tueArr = [];wedArr = [];thuArr = [];friArr = [];
+
+        response = {'id':idArr,'monday':monArr,'tuesday':tueArr,'wednesday':wedArr,'thursday':thuArr,'friday':friArr};
+
+          for(let i=0;i<max;i++)
+        {
+           idArr[i] = tbledit[i].id;
+           monArr[i] = tbledit[i].monday;
+           tueArr[i] = tbledit[i].tuesday;
+           wedArr[i] = tbledit[i].wednesday;
+           thuArr[i] = tbledit[i].thursday; 
+           friArr[i] = tbledit[i].friday;
+
+        }
+         console.log(response);
+         //remove ancient table
+         $("#tblbody tr").remove();
+         showtable(response);
+       
+            document.getElementById("txtNumber").disabled = false;
+
+            $.ajax({
+		   	url: '/updateformtodb',
+		  	data: $('form').serialize(),
+			type: 'POST',
+		  	success: function(response){
+			console.log(response);
+            document.getElementById("txtRowEdit").value = "";
+            document.getElementById("txtNumber").value = "";
+            document.getElementById("txtMonday").value = "";
+            document.getElementById("txtTuesday").value ="";
+            document.getElementById("txtWednesday").value="";
+            document.getElementById("txtThursday").value = "";
+            document.getElementById("txtFriday").value = "";
+  
+		      	},
+		     	error: function(error){
+			    	console.log(error);
+		       }
+
+		  });
+
+
+  });
+
+
+    
+         
+ });
+
+
+$('#deleteid').click(function(){
+      var delId = document.getElementById('txtRowDelete').value;
+         var tbldelete = []
+        var data = {}
+        for(let i=0;i < max;i++)
+     {
+        data = {'id':response.id[i],'monday':response.monday[i],'tuesday':response.tuesday[i],'wednesday':response.wednesday[i],'thursday':response.thursday[i],'friday':response.friday[i]};
+         //console.log(data);
+         tbldelete.push(data);
+     } 
+         console.log(tbldelete);
+        // console.log(tbledit[0].id);
+
+        for(let i=0;i<max;i++)
+        {
+            if(tbldelete[i].id == delId )
+            {
+              
+              tbldelete.splice(i,1);
+              
+            }
+        }
+
+        console.log(tbldelete);
+        
+        
+        
+        
+         //creating back a reponse type object so as to call my show function
+        idArr = [];monArr = [];tueArr = [];wedArr = [];thuArr = [];friArr = [];
+
+        response = {'id':idArr,'monday':monArr,'tuesday':tueArr,'wednesday':wedArr,'thursday':thuArr,'friday':friArr};
+
+          for(let i=0;i<max-1;i++)
+        {
+           idArr[i] = tbldelete[i].id;
+           monArr[i] = tbldelete[i].monday;
+           tueArr[i] = tbldelete[i].tuesday;
+           wedArr[i] = tbldelete[i].wednesday;
+           thuArr[i] = tbldelete[i].thursday; 
+           friArr[i] = tbldelete[i].friday;
+
+        }
+         console.log(response);
+         
+         
+        b = confirm("Are you sure ?")
+         if(b === true)
+         {
+            //remove ancient table
+            $("#tblbody tr").remove();
+            showtable(response);
+
+            $.ajax({
+		   	url: '/deletetodb',
+		  	data: $('form').serialize(),
+			type: 'POST',
+		  	success: function(response){
+			console.log(response);
+            document.getElementById("txtRowDelete").value = "";
+  
+		      	},
+		     	error: function(error){
+			    	console.log(error);
+		       }
+
+		  });
+
+         }else{
+             //do nothing
+         }  
+
+        
+  });
+
+
+
+
+
+
+
+
+$('#backid').click(function(){
+ 
+  window.location.href = "http://127.0.0.1:5000/homePage";
+  });
+
+$('#createid').click(function(){
+
+  });
+
+
+	$('#insertid').click(function(){
+
+    let number1  = document.getElementById('txtNumber').value;
+    let monday1  = document.getElementById('txtMonday').value;
+    let tuesday1 = document.getElementById('txtTuesday').value;
+    let wednesday1 = document.getElementById('txtWednesday').value;
+    let thursday1 = document.getElementById('txtThursday').value;
+    let friday1 = document.getElementById('txtFriday').value;
+
+    //Get html table 0 means first table
+    var table =  document.getElementsByTagName('table')[0];
+   console.log(max);
+   //add a new empty row to the table
+    var newRow  = table.insertRow(max+1);
+    
+    //add new cells to the table
+    var cel1 = newRow.insertCell(0);
+    var cel2 = newRow.insertCell(1);
+    var cel3 = newRow.insertCell(2);
+    var cel4 = newRow.insertCell(3);
+    var cel5 = newRow.insertCell(4);
+    var cel6 = newRow.insertCell(5);
+
+    //filling the cells
+    cel1.innerHTML = number1;
+    cel2.innerHTML = monday1;
+    cel3.innerHTML = tuesday1;
+    cel4.innerHTML = wednesday1;
+    cel5.innerHTML = thursday1;
+    cel6.innerHTML = friday1;
+
+
+
+
+
+
+       /*
+        var id1 =    $('#txtNumber').val();
+        var monday =    $('#txtMonday').val();
+		var tuesday =   $('#txtTuesday').val();
+		var wednesday = $('#txtWednesday').val();
+		var thursday =  $('#txtThursday').val();
+		var friday =    $('#txtFriday').val();
+		*/
+    
+		   $.ajax({
+		   	url: '/modalformtodb',
+		  	data: $('form').serialize(),
+			type: 'POST',
+		  	success: function(response){
+			console.log(response);
+            document.getElementById("txtNumber").value = "";
+            document.getElementById("txtMonday").value = "";
+            document.getElementById("txtTuesday").value ="";
+            document.getElementById("txtWednesday").value="";
+            document.getElementById("txtThursday").value = "";
+            document.getElementById("txtFriday").value = "";
+  
+		      	},
+		     	error: function(error){
+			    	console.log(error);
+		       }
+
+		  });
+
+  
+  });
+
+
+
+
+
+     }
+  });  
+
+});
+                 
+ </script>
+
+
+</body>
+</html>
+

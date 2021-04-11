@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/default_css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+   <!-- <link href="/static/css/signin.css" rel="stylesheet">-->
+
+    <!--<link href="static/css/login.css" rel="stylesheet">-->
+
+   <script src="static/js/jquery-1.9.0.js"></script>
+  <!--<script src="static/js/script2.js"></script>-->
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+	<script src="https://cdn.awesomefunctions.com/awesome-functions.min.js"></script> 
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+   <style>
+   
+   .btn {
+	color: moccasin;
+	border: 1px solid black;
+  
+	font-family: sans-serif;
+	font-size: 18px;
+	transition: 0.9s ease;
+	text-align: center;
+}
+
+.btn:hover {
+	background-color: #F07334;
+	color: black;
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 12px;
+
+}
+   
+label {
+  float:left; 
+  color:moccasin;
+
+}
+.form-control {
+	background-color:moccasin;
+	border: none;
+	
+	text-align: left;
+	color: royalblue;
+  font-size:16px;
+}
+
+h1 {
+	font-family: sans-serif;
+	color: orangered;
+}
+#h11 {
+   margin-left:3%;
+}
+ 
+h2 {
+	font-family: sans-serif;
+	color: royalblue;
+}  
+ 
+.container {
+	font-family:  sans-serif;
+	border: 2px solid #F07334;
+	text-align:  center;
+  margin-top:2%;
+  height:90%;
+  
+	border-radius: 12px;
+	background-color: moccasin;
+	padding-bottom: 10px;
+	-webkit-box-shadow: 3px 0px 10px 0px black;
+	-moz-box-shadow: 3px 0px 10px 0px black;
+	box-shadow: 3px 0px 10px 0px black;
+
+}
+
+body {
+    background: #fff url(../static/images/4.jpg) repeat top center;
+	
+} 
+
+
+#timetableid {
+    color:moccasin;
+    border: 1px solid black;
+	  width: 170px;
+    padding-top:20px;
+    padding-bottom:20px;
+    margin-top:10px;
+    margin-bottom:25px;
+    margin-left:100px;
+	font-family: sans-serif;
+	font-size: 18px;
+	transition: 0.5s ease;
+	text-align: center;
+}
+#timetableid:hover {
+	background-color: #F07334;
+	color: black;
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 12px;
+
+}
+
+
+
+#settingid {
+    float:right;
+    margin-right:2%;
+    
+    color:black;
+    background-color: #F07334;
+    border: 1px solid black;
+	  width: 140px;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-top:-50px;
+    margin-bottom:20px;
+    
+	font-family: sans-serif;
+	font-size: 18px;
+	transition: 0.5s ease;
+	text-align: center;
+}
+#settingid:hover {
+	background-color: royalblue;
+	color: yellow;
+	border: 1px solid black;
+	font-family: sans-serif;
+	font-size: 12px;
+
+}
+   
+      
+   </style>
+   
+  </head>
+
+  <body>
+
+  <h1 id="h11">Bleach Learning App</h1>
+
+  <button id="settingid" class="btn btn-md  btn-block" type="button" value = 'send'>Payement</button>
+
+
+  <div class="container" style="margin-bottom:0px;">
+
+   <h2>Welcome To BleachLapp</h2>
+
+  <button id="timetableid" class="btn btn-md btn-success btn-block" type="button" value = 'send'>New Timetable</button>
+    
+
+
+ </div>
+ <script>
+$(function(){
+
+$('#timetableid').click(function(){
+
+  window.location.href = "http://127.0.0.1:5000/tablecreation";
+ 
+ 
+ 
+  });
+});
+ </script>
+
+</body>
+</html>
+
